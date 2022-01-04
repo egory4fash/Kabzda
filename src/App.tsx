@@ -17,12 +17,17 @@ function App() {
             <PageTitle title={"CONTROLLED VS UNCONTROLLED"}/>
             CONTROLLED
             <Rating value={value} setValue={setValue}/>
-            <Accordion title={"Controlled"} setCollapsed={() => {setCollapsed(!collapsed)}} collapsed={collapsed}/>
+            <Accordion
+                title={"Menu"}
+                setCollapsed={() => {
+                    setCollapsed(!collapsed)}}
+                collapsed={collapsed}
+                items={['123', '456', '789']}/>
             <OnOff on={on} setOn={setOn}/>
-            UNCONTROLLED
-            <UncontrolledRating/>
-            <UncontrolledAccordion title={"Menu"}/>
-            <UncontrolledOnOff onChange={setOn}/> {on.toString()}
+            {/*UNCONTROLLED*/}
+            {/*<UncontrolledRating/>*/}
+            {/*<UncontrolledAccordion title={"Menu"}/>*/}
+            {/*<UncontrolledOnOff onChange={setOn}/> {on.toString()}*/}
         </div>
     );
 }
