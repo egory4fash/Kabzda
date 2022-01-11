@@ -12,6 +12,11 @@ function App() {
     let [value, setValue] = useState<RatingValueType>(0)
     let [collapsed, setCollapsed] = useState<boolean>(false)
     let [on, setOn] = useState<boolean>(false)
+
+    const onClick = () => {
+        alert("234")
+    }
+
     return (
         <div className="App">
             <PageTitle title={"CONTROLLED VS UNCONTROLLED"}/>
@@ -22,7 +27,10 @@ function App() {
                 setCollapsed={() => {
                     setCollapsed(!collapsed)}}
                 collapsed={collapsed}
-                items={['123', '456', '789']}/>
+                items={[{title:'Egor',value:1},
+                    {title:'Dina',value:2},
+                    {title:'Anna',value:3}]}
+            onClick={onClick}/>
             <OnOff on={on} setOn={setOn}/>
             {/*UNCONTROLLED*/}
             {/*<UncontrolledRating/>*/}
