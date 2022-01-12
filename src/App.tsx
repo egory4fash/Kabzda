@@ -6,6 +6,7 @@ import {UncontrolledOnOff} from "./components/OnOff/UncontrolledOnOff";
 import {Rating, RatingValueType} from "./components/Rating/Rating";
 import Accordion from "./components/Accordion/Accordion";
 import {OnOff} from "./components/OnOff/OnOff";
+import { Select } from './components/Select/Select';
 
 function App() {
 
@@ -17,6 +18,11 @@ function App() {
         alert("234")
     }
 
+    const [selectValue,setSelectValue] = useState(2)
+
+    const onChangeValue = (value:any) => {
+        setSelectValue(value)
+    }
     return (
         <div className="App">
             <PageTitle title={"CONTROLLED VS UNCONTROLLED"}/>
@@ -32,6 +38,10 @@ function App() {
                     {title:'Anna',value:3}]}
             onClick={onClick}/>
             <OnOff on={on} setOn={setOn}/>
+            <Select value={selectValue}  items={[{title:'Minsk',value:1},
+                {title:'Kiev',value:2},
+                {title:'Moscow',value:3}]}
+                    onChangeValue = {onChangeValue}/>
             {/*UNCONTROLLED*/}
             {/*<UncontrolledRating/>*/}
             {/*<UncontrolledAccordion title={"Menu"}/>*/}

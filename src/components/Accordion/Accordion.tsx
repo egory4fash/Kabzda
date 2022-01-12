@@ -20,7 +20,7 @@ type AccordionBodyPropsType = {
     onClick: () => void
 }
 
-type ItemType = {
+export type ItemType = {
     value:any,
     title:string
 }
