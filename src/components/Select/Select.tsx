@@ -4,7 +4,6 @@ import styles from "./Select.module.css"
 
 type SelectPropsType = {
     value: any
-
     items: ItemType[]
     onChangeValue: (value: any) => void
 }
@@ -12,9 +11,9 @@ type SelectPropsType = {
 export const Select = (props: SelectPropsType) => {
 
     let [active, setActive] = useState(false)
-    let [hoveredElemValue, sethoveredElemValue] = useState(props.value)
+    let [hoveredElemValue, setHoveredElemValue] = useState(props.value)
     useEffect(() => {
-            sethoveredElemValue(props.value)
+            setHoveredElemValue(props.value)
         },
         [props.value]
     )
@@ -31,6 +30,7 @@ export const Select = (props: SelectPropsType) => {
     const hoveredItem = props.items.find(i => i.value === hoveredElemValue)
     const onKeyUp = (e: KeyboardEvent<HTMLDivElement>) => {
         if (e.key === "ArrowDown") {
+
             for (let i = 0; i < props.items.length; i++) {
                 if (props.items[i].value === hoveredElemValue) {
                     if (props.items[i + 1].value) {
@@ -64,7 +64,7 @@ export const Select = (props: SelectPropsType) => {
                                 className={styles.item + ' ' + (hoveredItem === i ? styles.selected : '')}
                                 key={i.value}
                                 onMouseEnter={() => {
-                                    sethoveredElemValue(i.value)
+                                    setHoveredElemValue(i.value)
                                 }}
                                 onClick={() => onItemClick(i.value)}>
                                 {i.title}

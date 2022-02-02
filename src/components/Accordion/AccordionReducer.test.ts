@@ -1,0 +1,1 @@
+test('reducer should convert value to opposite')
