@@ -18,7 +18,7 @@ test('error raised by incorrect action', () => {
     }
 
     expect( () => {
-        AccordionReducer(state,{type:"TOGGLE_CONSTANTE"})
+        AccordionReducer(state,{type:"INCORRECT_ACTION"})
     }).toThrowError()
 
 })
