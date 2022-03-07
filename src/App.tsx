@@ -3,7 +3,8 @@ import './App.css';
 import {Rating, RatingValueType} from "./components/Rating/Rating";
 import Accordion from "./components/Accordion/Accordion";
 import {OnOff} from "./components/OnOff/OnOff";
-import { Select } from './components/Select/Select';
+import {Select} from './components/Select/Select';
+import {UseMemoCounter} from "./components/useMemo/UseMemoCounter";
 
 function App() {
 
@@ -15,9 +16,9 @@ function App() {
         alert("234")
     }
 
-    const [selectValue,setSelectValue] = useState(2)
+    const [selectValue, setSelectValue] = useState(2)
 
-    const onChangeValue = (value:any) => {
+    const onChangeValue = (value: any) => {
         setSelectValue(value)
     }
     return (
@@ -28,17 +29,19 @@ function App() {
             <Accordion
                 title={"Menu"}
                 setCollapsed={() => {
-                    setCollapsed(!collapsed)}}
+                    setCollapsed(!collapsed)
+                }}
                 collapsed={collapsed}
-                items={[{title:'Egor',value:1},
-                    {title:'Dina',value:2},
-                    {title:'Anna',value:3}]}
-            onClick={onClick}/>
+                items={[{title: 'Egor', value: 1},
+                    {title: 'Dina', value: 2},
+                    {title: 'Anna', value: 3}]}
+                onClick={onClick}/>
             <OnOff on={on} setOn={setOn}/>
-            <Select value={selectValue}  items={[{title:'Minsk',value:1},
-                {title:'Kiev',value:2},
-                {title:'Moscow',value:3}]}
-                    onChangeValue = {onChangeValue}/>
+            <Select value={selectValue} items={[{title: 'Minsk', value: 1},
+                {title: 'Kiev', value: 2},
+                {title: 'Moscow', value: 3}]}
+                    onChangeValue={onChangeValue}/>
+            <UseMemoCounter />
             {/*UNCONTROLLED*/}
             {/*<UncontrolledRating/>*/}
             {/*<UncontrolledAccordion title={"Menu"}/>*/}
