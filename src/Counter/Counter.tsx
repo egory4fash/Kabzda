@@ -1,22 +1,26 @@
-import React, {useMemo, useState} from "react";
-
-const generateData = () => {
-    console.log("Data")
-    return (12)
-}
+import React, {useEffect, useState} from "react";
 
 
 export const Counter = () => {
 
-    const [counter,setCounter] = useState(generateData)
+    let [counter, setCounter] = useState(0)
 
-const changer = (state:number) => {
-        return state+1
-}
+    console.log('Counter')
+    useEffect(() => {
+        setInterval( () => {
+
+
+            setCounter(++counter)
+        },1000)
+
+    },[counter])
     return (
         <div>
-            {counter}
-            <button onClick={ () => {setCounter(changer)}}> + </button>
+            Hello {counter}
+            {/*<button onClick={() => {*/}
+            {/*    setCounter(counter + 1)*/}
+            {/*}}> +*/}
+            {/*</button>*/}
         </div>
     )
 }
