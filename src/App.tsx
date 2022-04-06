@@ -5,6 +5,7 @@ import Accordion from "./components/Accordion/Accordion";
 import {OnOff} from "./components/OnOff/OnOff";
 import {Select} from './components/Select/Select';
 import {UseMemoCounter} from "./components/useMemo/UseMemoCounter";
+import {Counter} from "./Counter/Counter";
 
 function App() {
 
@@ -42,6 +43,7 @@ function App() {
                 {title: 'Moscow', value: 3}]}
                     onChangeValue={onChangeValue}/>
             <UseMemoCounter />
+            <Counter />
             {/*UNCONTROLLED*/}
             {/*<UncontrolledRating/>*/}
             {/*<UncontrolledAccordion title={"Menu"}/>*/}
