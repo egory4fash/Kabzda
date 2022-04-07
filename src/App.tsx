@@ -6,6 +6,7 @@ import {OnOff} from "./components/OnOff/OnOff";
 import {Select} from './components/Select/Select';
 import {UseMemoCounter} from "./components/useMemo/UseMemoCounter";
 import {Counter} from "./Counter/Counter";
+import {Clock} from "./components/Clock/Clock";
 
 function App() {
 
@@ -44,6 +45,7 @@ function App() {
                     onChangeValue={onChangeValue}/>
             <UseMemoCounter />
             <Counter />
+            <Clock />
             {/*UNCONTROLLED*/}
             {/*<UncontrolledRating/>*/}
             {/*<UncontrolledAccordion title={"Menu"}/>*/}
