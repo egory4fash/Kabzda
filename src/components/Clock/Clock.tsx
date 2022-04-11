@@ -25,16 +25,26 @@ export const Clock: React.FC<PropsType> = (props) => {
     const minutesString = timeTo2DigitsFormatter(date.getMinutes())
     const secondsString = timeTo2DigitsFormatter(date.getSeconds())
 
+    const secondsStyle = {
+        transform: `rotate(${date.getSeconds() * 6}deg)`
+    }
+    const minutesStyle = {
+        transform: `rotate(${date.getMinutes() * 6}deg)`
+    }
+    const hoursStyle = {
+        transform: `rotate(${date.getHours() * 30}deg)`
+    }
+
     return (
         <div className={s.clockface}>
             <img src={'https://www.kequc.com/articles/f9900770-60b1-408e-a5d0-374da0c0f6b5/256-face.png'} alt=""/>
-            <div className={s.secondhand}>
+            <div className={s.secondhand} style={secondsStyle}>
                 <img src={'https://www.kequc.com/articles/f9900770-60b1-408e-a5d0-374da0c0f6b5/256-second-hand.png'} alt=""/>
             </div>
-            <div className={s.minutehand}>
+            <div className={s.minutehand} style={minutesStyle}>
                 <img src={'https://www.kequc.com/articles/f9900770-60b1-408e-a5d0-374da0c0f6b5/256-minute-hand.png'} alt=""/>
             </div>
-            <div className={s.hourhand}>
+            <div className={s.hourhand} style={hoursStyle}>
                 <img src={'https://www.kequc.com/articles/f9900770-60b1-408e-a5d0-374da0c0f6b5/256-hour-hand.png'} alt=""/>
             </div>
         </div>

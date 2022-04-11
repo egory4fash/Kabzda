@@ -17,14 +17,3 @@
     width: 128px;
 }
 
-.clockface .secondhand img {
-    animation: spin 60s linear infinite;
-}
-.clockface .minutehand img {
-    animation: spin 3600s linear infinite;
-}
-.clockface .hourhand img {
-    animation: spin 43200s linear infinite;
-}
-
-@keyframes spin { 100% { transform: rotate(360deg); } }
